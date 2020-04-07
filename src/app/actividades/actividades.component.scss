@@ -2,15 +2,6 @@
 	width: 40%;
 }
 
-.letra-header{
-	text-align: center;
-	font-family: Comic Sans MS, Arial, Helvetica, sans-serif;
-}
-
-.borde-header{
-	border: 1px solid black;
-}
-
 .covid19{
 	margin-top: 10%;
 	margin-bottom: 7%;
@@ -28,12 +19,11 @@
 }
 
 .img-fluid{
-		padding: 10px 15px;
-		height: 75%;
-		width: 100%;
+	padding: 10px 15px;
+	height: 75%;
+	width: 100%;
 
 }
-
 
 .cuadro-img{
 	border-top: 1px solid black;
@@ -42,56 +32,8 @@
 	font-family: Arial, sans-serif;
 }
 
-.titulo-section{
-	margin-top: 5%;
-	font-family: Comic Sans MS, Arial, sans-serif;
-}
-
-.ajuste-nav{
-	margin: auto;
-}
-
-.margen-nav{
-	margin-top: 3%;
-}
-
-ul{
-	background-color: cadetblue;
-	 border-radius: 5px;
-}
-
-.letra-nav{
-	font-size: 20px;
-	padding: 15px 20px;
-}
-
-.botonLogin{
-    border: none;
-    color: white;
-    font-size: 20px;
-    background:  #1a2537;
-    padding: 15px 20px;
-    border-radius: 5px;
-
-  }
-
-.botonRegistro{
-	border: none;
-    color: white;
-    font-size: 20px;
-    background:  #1a2537;
-    padding: 15px 20px;
-    border-radius: 5px;
-}
-
-.botonLogin:hover{
-    background: cadetblue;
-}
-
-.botonRegistro:hover{
-    background: cadetblue;
-}
-
-.menu{
-	display: none;
+.titulo{
+	text-align: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }

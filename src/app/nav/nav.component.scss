@@ -1,0 +1,37 @@
+.contenedor-nav {
+    margin: auto;
+  }
+  
+  .letra-nav {
+    text-align: center;
+  }
+  
+  .letra-nav:hover {
+    font-weight: bold;
+  }
+  
+  .ajuste-logo {
+    width: 40%;
+  }
+  
+  .contenedor-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .botonLogin{
+	  border: none;
+    color: white !important;
+    font-size: 20px;
+    background:  black;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+.botonLogin:hover{
+    background: rgb(49, 158, 209);
+}
+
+.ajuste-logo:hover{
+  cursor: pointer;
+}

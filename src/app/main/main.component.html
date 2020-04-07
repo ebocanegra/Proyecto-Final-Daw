@@ -9,53 +9,11 @@
 </head>
 <body>
 
-        <nav class=" container-fluid navbar navbar-expand-lg navbar-light">
-            
-            <div class="row">
-                <div class="col-md-3 col-sm-3 contenedor-logo">
-                    <img class="ajuste-logo" src="../../assets/img/logo/logo.svg">
-                </div>
-
-                <div class="col-md-6 col-sm-6 contenedor-nav">
-                    <div class="row">
-                        <ul class="navbar-nav mr-auto contenedor-nav">
-                        <div class="col-md-3 col-sm-3">
-                            <li class="nav-item">
-                                <a class="nav-link letra-nav" routerLink="/" routerLinkActive="active">INICIO</a>
-                            </li>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3">
-                            <li class="nav-item">
-                                <a class="nav-link letra-nav" routerLink="/actividades" routerLinkActive="active">ACTIVIDADES</a>
-                            </li>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3">
-                            <li class="nav-item">
-                                <a class="nav-link letra-nav" href="#">PERSONAL</a>
-                            </li>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3">
-                            <li class="nav-item">
-                                <a class="nav-link letra-nav" href="#">INICIAR SESION</a>
-                            </li>
-                        </div>
-                    </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-3 contenedor-logo">
-                    <img class="ajuste-logo" src="../../assets/img/logo/logo.svg">
-                </div>
-            </div>
-          
-        </nav>
-
-        <section class="container"> 
-            <h1 class="covid19">Seguimos entrenando contigo desde casa</h1>
-        </section>
+    <app-nav></app-nav>
+    
+    <section class="container"> 
+        <h1 class="covid19">Seguimos entrenando contigo desde casa</h1>
+    </section>
     
 
      <section class="container"> 
@@ -105,7 +63,7 @@
                   </div>
                   
                   <div class="row">
-                    <div class="col-md-12"> 
+                    <div class="col-md-12 pt-3 pb-3"> 
                       <h3 class="letraCentro">LOGRA TUS METAS</h3>
                     </div>
                   </div>
@@ -129,7 +87,7 @@
                   </div>
                   
                   <div class="row">
-                    <div class="col-md-12"> 
+                    <div class="col-md-12 pt-3 pb-3"> 
                       <h3 class="letraCentro">SOCIALIZACIÓN</h3>
                     </div>
                   </div>
@@ -173,12 +131,12 @@
 
               <div class="row">
                 <div class="col-md-12 svg-individual"> 
-                  <img class="estilo-svg" src="../../assets/img/index/svg/6.svg " alt="">
+                  <img class="estilo-svg2" src="../../assets/img/index/svg/6.svg " alt="">
                 </div>
               </div>
                 
               <div class="row">
-                <div class="col-md-12"> 
+                <div class="col-md-12 pt-3 pb-3"> 
                   <h3 class="letraCentro">TRABAJAMOS SOBRE TUS PREFERENCIAS</h3>
                 </div>
               </div>
@@ -200,7 +158,7 @@
                 </div>
                 
                 <div class="row">
-                  <div class="col-md-12"> 
+                  <div class="col-md-12 pt-4 pb-5"> 
                     <h3 class="letraCentro">COLABORACIONES</h3>
                   </div>
                 </div>
@@ -216,11 +174,6 @@
 
           </div>
     </section>
-
-     <section class="container-fluid fondo2">
-        <h3 class="letra-fondo2"> TU TAMBIEN PUEDES. </h3>
-     </section>
-
 
     <div class="wrapper container-cf">
         <input checked type=radio name="slider" id="slide1" />
@@ -371,13 +324,8 @@
         
       </div>
 
-     
-
-     <footer class="container-fluid">
-         
-     </footer>
+     <app-footer></app-footer>
     
-
 </body>
 
 

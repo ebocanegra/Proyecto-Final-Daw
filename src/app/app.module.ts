@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { Routes, RouterModule } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
+import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { PersonalComponent } from './personal/personal.component';
 
 const appRoutes:Routes=[
   {
@@ -15,6 +19,10 @@ const appRoutes:Routes=[
   {
     path:'actividades',
     component: ActividadesComponent
+  },
+  {
+    path:'personal',
+    component: PersonalComponent
   }
 ];
 
@@ -23,6 +31,10 @@ const appRoutes:Routes=[
     AppComponent,
     MainComponent,
     ActividadesComponent,
+    NavComponent,
+    LoginComponent,
+    FooterComponent,
+    PersonalComponent,
   ],
   imports: [
     BrowserModule,
