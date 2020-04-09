@@ -1,8 +1,14 @@
 <div class="contenedor-total">
     <form class="formulario">
-
-        <h1>Login</h1>
+        
+        <h1>Registrate</h1>
         <div class="contenedor">
+        
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" placeholder="Nombre Completo">  
+            </div>
+                
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
                 <input type="text" placeholder="Correo Electronico">
@@ -13,10 +19,10 @@
                 <input type="password" placeholder="Contraseña">
             </div>
 
-            <input type="submit" value="Login" class="button">
-            <p>¿No tienes una cuenta? <a class="link" routerLink="/registro" routerLinkActive="active">Registrate</a></p>
+            <input type="submit" value="Registrate" class="button">
+            
+            <p>¿Ya tienes una cuenta?<a class="link" routerLink="/login" routerLinkActive="active"> Iniciar Sesion</a></p>
             <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>
         </div>
     </form>
 </div>
-

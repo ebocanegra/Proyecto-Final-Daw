@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { PersonalComponent } from './personal/personal.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const appRoutes:Routes=[
   {
@@ -23,6 +24,14 @@ const appRoutes:Routes=[
   {
     path:'personal',
     component: PersonalComponent
+  },
+  {
+    path:'login',
+    component: LoginComponent
+  },
+  {
+    path:'registro',
+    component: RegistroComponent
   }
 ];
 
@@ -35,6 +44,7 @@ const appRoutes:Routes=[
     LoginComponent,
     FooterComponent,
     PersonalComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,
