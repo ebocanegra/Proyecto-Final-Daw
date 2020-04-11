@@ -19,6 +19,9 @@ import { NavClienteComponent } from './nav-cliente/nav-cliente.component';
 import { InicioClienteComponent } from './inicio-cliente/inicio-cliente.component';
 import { CalculadoraClienteComponent } from './calculadora-cliente/calculadora-cliente.component';
 import { RutinasClienteComponent } from './rutinas-cliente/rutinas-cliente.component';
+import { RutinaPrincipianteComponent } from './rutina-principiante/rutina-principiante.component';
+import { RutinaAvanzadaComponent } from './rutina-avanzada/rutina-avanzada.component';
+import { RutinaCasaComponent } from './rutina-casa/rutina-casa.component';
 
 const appRoutes:Routes=[
   {
@@ -64,6 +67,18 @@ const appRoutes:Routes=[
   {
     path:'rutinasCliente',
     component: RutinasClienteComponent
+  },
+  {
+    path:'rutinaPrincipiante',
+    component: RutinaPrincipianteComponent
+  },
+  {
+    path:'rutinaAvanzada',
+    component: RutinaAvanzadaComponent
+  },
+  {
+    path:'rutinaCasa',
+    component: RutinaCasaComponent
   }
 ];
 
@@ -85,6 +100,9 @@ const appRoutes:Routes=[
     InicioClienteComponent,
     CalculadoraClienteComponent,
     RutinasClienteComponent,
+    RutinaPrincipianteComponent,
+    RutinaAvanzadaComponent,
+    RutinaCasaComponent,
   ],
   imports: [
     BrowserModule,

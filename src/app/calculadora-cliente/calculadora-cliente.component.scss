@@ -1,0 +1,43 @@
+.contenedor-total{
+    background-image: url(../../assets/img/fondo4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    
+}
+
+.color-blanco{
+    color: white;
+}
+
+.estilo-input{
+    border: 1px solid gray;
+    background-color: rgb(155, 155, 155);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.estilo-tabla{
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background-color: #E65724;
+}
+
+.boton{
+    background-color: #E65724;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 2%;
+}
+
+.boton:hover{
+    background-color: rgb(202, 75, 29);
+}

@@ -1,1 +1,50 @@
-<p>calculadora-cliente works!</p>
+<app-nav-cliente></app-nav-cliente>
+
+<div class="container-fluid contenedor-total">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="color-blanco">CALCULA TU ÍNDICE DE MASA CORPORAL</h2>
+                <h6 class="color-blanco">El IMC se utiliza para clasificar el estado ponderal de la persona</h6>
+                <input class="estilo-input" type="text" value="Peso / kg">
+                <input class="estilo-input" type="text" value="Altura / cm"><br>
+                <input class="boton" type="button" value="CALCULAR">
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <table class="table estilo-tabla">
+                    <thead>
+                    <tr>
+                        <th scope="col">IMC</th>
+                        <th scope="col">ESTADO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IMC es inferior a 18.5</td>
+                            <td>Bajo peso</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>IMC es entre 18.5 y 24.9</td>
+                            <td>Peso saludable</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>IMC entre 25.0 y 29.9</td>
+                            <td>Sobrepeso</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>IMC >= 30.0</td>
+                            <td>Obesidad</td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
