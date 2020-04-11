@@ -1,0 +1,36 @@
+nav {
+    border: 1px solid #ccc;
+}
+
+.ajuste-logo{
+    width: 8%;
+}
+
+.centrar-nav{
+  display: flex;
+  justify-content: center;
+}
+
+#navbarNav .navbar-nav a{
+    padding: 1.2rem 2rem;
+}
+
+@media (max-width: 991.98px) {
+    .nav-vertical {
+        border: 1px solid #ccc;
+        right: -301px;
+        position: absolute;
+        width: 300px;
+        top: 57px;
+        transition: all .2s ease-out;
+    }
+
+    .active {
+        right: -1px;
+    }
+}
+
+.navbar-collapse{
+    background-color: white;
+    z-index: 1;
+}

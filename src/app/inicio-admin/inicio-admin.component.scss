@@ -1,0 +1,57 @@
+/*------ CSS de la pagina web ------*/
+
+
+.tamaño-total{
+  width: 90%;
+  display: flex;
+  justify-content: center; 
+}
+
+.tamaño-inf{
+  width: 90%;
+  margin-top: 2%;
+}
+
+.estilo-contenido{
+  color: #35518D;
+  text-align: center;
+  border: 1px solid black;
+  padding: 2%;
+  margin: 2%;
+  border-radius: 4px;
+}
+
+.centrar{
+  text-align: center;
+  margin-top: 2%;
+}
+
+.c1{
+  background-color: #F8F9FA;
+}
+
+.contenedor-inf{
+  margin-top: 3%;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0px;
+}
+
+.estilo-titulo{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #35518D;
+  color: white;
+  text-align: center;
+  border-right: 1px solid #35518D;
+  border-left: 1px solid #35518D;
+  border-top: 1px solid #35518D;
+  border-radius: 4px;
+}
+
+.estilo-contenido2{
+  color: #35518D;
+  text-align: center;
+}
+
+/* Pagina usuarios*/

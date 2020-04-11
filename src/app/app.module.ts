@@ -11,6 +11,14 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { PersonalComponent } from './personal/personal.component';
 import { RegistroComponent } from './registro/registro.component';
+import { NavAdminComponent } from './nav-admin/nav-admin.component';
+import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
+import { UsuarioAdminComponent } from './usuario-admin/usuario-admin.component';
+import { ActividadesAdminComponent } from './actividades-admin/actividades-admin.component';
+import { NavClienteComponent } from './nav-cliente/nav-cliente.component';
+import { InicioClienteComponent } from './inicio-cliente/inicio-cliente.component';
+import { CalculadoraClienteComponent } from './calculadora-cliente/calculadora-cliente.component';
+import { RutinasClienteComponent } from './rutinas-cliente/rutinas-cliente.component';
 
 const appRoutes:Routes=[
   {
@@ -32,6 +40,30 @@ const appRoutes:Routes=[
   {
     path:'registro',
     component: RegistroComponent
+  },
+  {
+    path:'inicioAdmin',
+    component: InicioAdminComponent
+  },
+  {
+    path:'actividadesAdmin',
+    component: ActividadesAdminComponent
+  },
+  {
+    path:'usuarioAdmin',
+    component: UsuarioAdminComponent
+  },
+  {
+    path:'inicioCliente',
+    component: InicioClienteComponent
+  },
+  {
+    path:'calculadoraCliente',
+    component: CalculadoraClienteComponent
+  },
+  {
+    path:'rutinasCliente',
+    component: RutinasClienteComponent
   }
 ];
 
@@ -45,6 +77,14 @@ const appRoutes:Routes=[
     FooterComponent,
     PersonalComponent,
     RegistroComponent,
+    NavAdminComponent,
+    InicioAdminComponent,
+    UsuarioAdminComponent,
+    ActividadesAdminComponent,
+    NavClienteComponent,
+    InicioClienteComponent,
+    CalculadoraClienteComponent,
+    RutinasClienteComponent,
   ],
   imports: [
     BrowserModule,
