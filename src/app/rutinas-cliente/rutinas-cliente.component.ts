@@ -12,4 +12,10 @@ export class RutinasClienteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ /* mostrarPrincipiante(){
+    var etiqueta = document.createElement("app-rutina-principiante");
+    var cogerDiv = document.getElementById("mRutinas");
+    document.body.insertBefore(etiqueta, cogerDiv);
+  }*/
+
 }

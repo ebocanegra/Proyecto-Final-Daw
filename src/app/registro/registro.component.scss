@@ -4,6 +4,11 @@
     background: url(../../assets/img/fondo1.jpg);
     background-size: cover;
     background-attachment: fixed;
+    height: 100vh;
+}
+
+.separacion{
+    padding-bottom: 10%;
 }
 
 * {
@@ -17,7 +22,6 @@
 
 .formulario{
     background: #fff;
-    margin-top: 150px;
     padding: 3px;
 }
 
@@ -78,7 +82,6 @@ p{
     .formulario{
         margin: auto;
         width: 500px;
-        margin-top: 150px;
         border-radius: 2%;
     }
 }
