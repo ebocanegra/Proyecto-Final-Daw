@@ -16,7 +16,8 @@
   
   .contenedor-logo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .botonLogin{
@@ -34,6 +35,43 @@
 
 .ajuste-logo:hover{
   cursor: pointer;
+}
+
+.contenedor-hamburger{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.img-hamburger{
+  display: flex;
+  align-items: center;
+}
+
+.col-xs-6, .col-xs-6{
+  width: 50%;
+}
+
+@media (max-width: 991.98px) {
+  .nav-vertical {
+      border: 1px solid #ccc;
+      right: -301px;
+      position: absolute;
+      width: 300px;
+      top: 57px;
+      transition: all .2s ease-out;
+      background-color: white;
+      z-index: 1;
+  }
+
+  .active {
+      right: -1px;
+  }
+}
+
+.navbar-collapse{
+  background-color: white;
+  z-index: 1;
 }
 
 /*Boto para ir arriba*/

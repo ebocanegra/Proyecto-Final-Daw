@@ -12,6 +12,16 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $(document).ready(function(){
+
+      //menú vertical
+      $(".navbar-toggler").click(function(e) {
+          e.preventDefault();
+          $("#navbarNav").toggleClass("active");
+      });
+    
+    });
+
     $(document).ready(function(){ //Hacia arriba
       irArriba();
     });
