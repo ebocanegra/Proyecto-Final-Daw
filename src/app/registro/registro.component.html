@@ -2,27 +2,43 @@
 
     <div class="separacion"></div>
 
-    <form class="formulario">
+    <form class="formulario" [formGroup]="signupForm">
         
         <h1>Registrate</h1>
         <div class="contenedor">
         
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Nombre Completo">  
+                <input type="text" formControlName="nombre" placeholder="Nombre Completo">  
+            </div>
+
+            <div class="container-validaciones" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                <h6 class="error-validaciones" *ngIf="nombre.errors.required">Nombre obligatorio.</h6>
+                <h6 class="error-validaciones" *ngIf="nombre.errors.minlength">El nombre tiene que tener minimo 5 caracteres.</h6>
             </div>
                 
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <input type="text" placeholder="Correo Electronico">
+                <input type="text" formControlName="email" placeholder="Correo Electronico">
+            </div>
+
+            <div class="container-validaciones" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <h6 class="error-validaciones" *ngIf="email.errors.required">Email obligatorio.</h6>
+                <h6 class="error-validaciones" *ngIf="email.errors.minlength">El Email tiene que tener minimo 5 caracteres.</h6>
+                <h6 class="error-validaciones" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">El Email no tiene un patron valido.</h6>
             </div>
             
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña">
+                <input type="password" formControlName="contrasena" placeholder="Contraseña">
             </div>
 
-            <input type="submit" value="Registrate" class="button">
+            <div class="container-validaciones" *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)">
+                <h6 class="error-validaciones" *ngIf="contrasena.errors.required">Contraseña obligatoria.</h6>
+                <h6 class="error-validaciones" *ngIf="contrasena.errors.minlength">La contraseña tiene que tener minimo 5 caracteres.</h6>
+            </div>
+
+            <input type="submit" [disabled]="signupForm.invalid" value="Registrate" class="button">
             
             <p>¿Ya tienes una cuenta?<a class="link" routerLink="/login" routerLinkActive="active"> Iniciar Sesion</a></p>
             <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>

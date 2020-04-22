@@ -25,6 +25,17 @@
     padding: 3px;
 }
 
+.container-validaciones{
+    background: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    margin-bottom: 5px;
+}
+
+.error-validaciones{
+    color: #721c24;
+}
+
+
 h1{
     text-align: center;
     color: #1a2537;
@@ -60,7 +71,7 @@ input[type="text"], input[type="password"]{
     cursor: pointer;
 }
 
-.button:hover{
+.button:hover:not([disabled]) {
     background: cadetblue;
 }
 
@@ -85,6 +96,8 @@ p{
         border-radius: 2%;
     }
 }
+
+
 
 
 

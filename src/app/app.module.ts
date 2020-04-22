@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { Routes, RouterModule } from '@angular/router';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
@@ -107,7 +111,9 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
