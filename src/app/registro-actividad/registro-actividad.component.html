@@ -1,0 +1,38 @@
+<div class="contenedor-total">
+
+    <div class="separacion"></div>
+
+    <form class="formulario" [formGroup]="signupCrearActividad" (ngSubmit)="saveActividad()">
+
+        <h1>Crear actividad</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-users icon"></i>
+                <label> <input type="text" formControlName="nombre" placeholder="Nombre actividad"> </label>
+            </div>
+
+            <div class="container-validaciones" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                <h6 class="error-validaciones" *ngIf="nombre.errors.required">Nombre obligatorio.</h6>
+                <h6 class="error-validaciones" *ngIf="nombre.errors.minlength">El nombre tiene que tener minimo 5 caracteres.</h6>
+            </div>
+            
+            <div class="input-contenedor">
+                <i class="fas fa-dumbbell icon"></i>
+                <label> <input type="text" formControlName="monitor" placeholder="Nombre del monitor"></label>
+            </div>
+
+            <div class="container-validaciones" *ngIf="monitor.invalid && (monitor.dirty || monitor.touched)">
+                <h6 class="error-validaciones" *ngIf="monitor.errors.required">Nombre del monitor obligatorio.</h6>
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-info icon"></i>
+                <label> <input type="text" formControlName="informacion" placeholder="Información"></label>
+            </div>
+
+            <input type="submit" [disabled]="signupCrearActividad.invalid" value="Nueva actividad" class="button" routerLink="/" routerLinkActive="active">
+            <p class="ajuste-link"><a class="link" routerLink="/actividadesAdmin" routerLinkActive="active">Ir a actividades del administrador</a></p>
+        </div>
+    </form>
+</div>
+

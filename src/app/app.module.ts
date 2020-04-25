@@ -7,7 +7,9 @@ import { MainComponent } from './main/main.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { NavComponent } from './nav/nav.component';
@@ -26,6 +28,7 @@ import { RutinasClienteComponent } from './rutinas-cliente/rutinas-cliente.compo
 import { RutinaPrincipianteComponent } from './rutina-principiante/rutina-principiante.component';
 import { RutinaAvanzadaComponent } from './rutina-avanzada/rutina-avanzada.component';
 import { RutinaCasaComponent } from './rutina-casa/rutina-casa.component';
+import { RegistroActividadComponent } from './registro-actividad/registro-actividad.component';
 
 const appRoutes:Routes=[
   {
@@ -83,6 +86,10 @@ const appRoutes:Routes=[
   {
     path:'rutinaCasa',
     component: RutinaCasaComponent
+  },
+  {
+    path:'crearActividad',
+    component: RegistroActividadComponent
   }
 ];
 
@@ -107,13 +114,15 @@ const appRoutes:Routes=[
     RutinaPrincipianteComponent,
     RutinaAvanzadaComponent,
     RutinaCasaComponent,
+    RegistroActividadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
