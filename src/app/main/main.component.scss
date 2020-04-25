@@ -10,7 +10,7 @@ body {
 
 .covid19 {
   margin-top: 10%;
-  margin-bottom: 7%;
+  margin-bottom: 10%;
   padding-top: 3%;
   padding-bottom: 3%;
   border-top: 2px solid black;
@@ -19,11 +19,49 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/*Tarifas*/
+
+.container-tarifas-bg{
+  background-color: #161616;
+  padding: 3%;
+  margin-top: 3%;
+}
+
+.titulo-tarifas{
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.container-tarifas{
+  margin: 5%;
+}
+
+.ajuste-letra-tarifas{
+  text-align: center;
+  color: white;
+}
+
+.disponibilidad{
+  color: white;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.container-letra{
+  border-right: 5px solid #161616;
+  background-color:  #29282D;
+  padding: 5%;
+}
+
+.e1{
+  color: #f34e3a;
+}
 
 /*ESTILOS DEL SECTION*/
 
 .container-cf {
-  margin-top: 7% !important;
+  margin-top: 5% !important;
 }
 
 .img-section {
