@@ -6,9 +6,27 @@
             <div class="col-md-6 col-sm-6">
                 <h2 class="color-blanco">CALCULA TU ÍNDICE DE MASA CORPORAL</h2>
                 <h6 class="color-blanco">El IMC se utiliza para clasificar el estado ponderal de la persona</h6>
-                <input class="estilo-input" type="text" placeholder="Peso / kg">
-                <input class="estilo-input" type="text" placeholder="Altura / cm"><br>
-                <input class="boton" type="button" value="CALCULAR">
+                
+                <form [formGroup]="signupCalculadora">
+                    <input class="estilo-input" formControlName="valor1" id="val1" type="text" [(ngModel)]="val1" placeholder="Peso / kg">
+
+                    <div class="container-validaciones" *ngIf="valor1.invalid && (valor1.dirty || valor1.touched)">
+                        <h6 class="error-validaciones" *ngIf="valor1.errors.required">Peso obligatorio.</h6>
+                        <h6 class="error-validaciones" *ngIf="valor1.errors.maxlength">El peso maximo es de 3 digitos.</h6>
+                   </div>
+
+                    <input class="estilo-input" formControlName="valor2" id="val2" type="text" [(ngModel)]="val2" placeholder="Altura / m"><br>
+
+                    <div class="container-validaciones" *ngIf="valor2.invalid && (valor2.dirty || valor2.touched)">
+                        <h6 class="error-validaciones" *ngIf="valor2.errors.required">Estatura obligatoria.</h6>
+                        <h6 class="error-validaciones" *ngIf="(valor2.dirty || valor2.touched) && valor2.invalid && valor2.errors.pattern">La estatura no es valida( Ejemplo: 1.75).</h6>
+
+                    </div>
+
+                    <input class="boton" type="button" [disabled]="signupCalculadora.invalid" (click)="CalcularIMC()" value="CALCULAR">
+                    <h3 class="resultado">Tu IMC es: {{resultadoTotal}}</h3>
+                </form>
+
             </div>
             <div class="col-md-6 col-sm-6">
                 <table class="table estilo-tabla">

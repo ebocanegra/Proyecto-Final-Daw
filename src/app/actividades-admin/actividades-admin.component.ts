@@ -9,10 +9,10 @@ import { Actividad } from '../interfaces/actividad';
   styleUrls: ['./actividades-admin.component.scss']
 })
 export class ActividadesAdminComponent implements OnInit {
-  API_ENDPOINT = 'htto://pi.diiesmurgi.org/~eduardo/api';
+  API_ENDPOINT = 'http://pi.diiesmurgi.org/~eduardo/public/api/';
   actividades: Actividad[];
   constructor(private actividadesService: ActividadesService, private httpClient: HttpClient) {
-    httpClient.get(this.API_ENDPOINT + '/actividades').subscribe((data: Actividad[]) => {
+    httpClient.get(this.API_ENDPOINT + 'actividades').subscribe((data: Actividad[]) => {
       this.actividades = data;
     });  
   }

@@ -56,12 +56,12 @@
   .nav-vertical {
       border: 1px solid #ccc;
       border-radius: 5px;
-      right: -301px;
+      display: none;
+      visibility: hidden;
       position: absolute;
       width: 300px;
       top: 67px;
-      transition: all .2s ease-out;
-      background-color: rgb(230, 230, 230);
+      background-color: white;
       z-index: 1;
       padding-bottom: 18px;
       padding-top: 10px;
@@ -69,6 +69,8 @@
 
   .active {
       right: -1px;
+      display: inline;
+      visibility: visible;
   }
 }
 

@@ -8,6 +8,28 @@ body {
   font-family: verdana, Helvetica, sans-serif;
 }
 
+.container-primero{
+  margin-top: 0.5%;
+  margin-bottom: 2%;
+  background-image: url(../../assets/img/fondo4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-motivacion{
+  padding-top: 13%;
+  padding-bottom: 13%;
+}
+
+.strong{
+  /*color: #FB5B21;*/
+  color: white;
+  font-size: 100px;
+  margin-left: 2%;
+  font-family: teko !important;
+}
+
+
 .covid19 {
   margin-top: 10%;
   margin-bottom: 10%;

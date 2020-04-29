@@ -1,5 +1,5 @@
 .contenedor-total{
-    background-image: url(../../assets/img/fondo4.jpg);
+    background-image: url(../../assets/img/fondo-calculadora.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 10%;
@@ -38,6 +38,22 @@
     padding: 2%;
 }
 
-.boton:hover{
+.boton:hover:not([disabled]){
     background-color: rgb(202, 75, 29);
+}
+
+.resultado{
+    color: white;
+    padding-top: 5%;
+    font-size: 20px;
+}
+
+.container-validaciones{
+    background: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    margin-bottom: 5px;
+}
+
+.error-validaciones{
+    color: #721c24;
 }
