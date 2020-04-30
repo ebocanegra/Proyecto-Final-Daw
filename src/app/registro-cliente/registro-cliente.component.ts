@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Cliente } from '../interfaces/clientes';
+import { ClientesService } from '../services/clientes.service';
 
 @Component({
   selector: 'app-registro-cliente',
@@ -14,7 +16,16 @@ export class RegistroClienteComponent implements OnInit {
 
   signupCliente: FormGroup;
 
-  constructor( private _builder: FormBuilder ) {
+  cliente: Cliente = {
+    nombre: null,
+    nif: null,
+    direccion: null,
+    correo: null,
+    fechaInscripcion: null,
+    contrasena: null
+  };
+
+  constructor( private _builder: FormBuilder, private clientesServices: ClientesService ) {
     this.signupCliente = this._builder.group({
       nombre: ['', Validators.compose( [Validators.required, Validators.minLength(5) ] ) ],
       nif: ['', Validators.compose( [Validators.required, Validators.pattern(this.dniPattern) ] ) ],
@@ -32,14 +43,15 @@ export class RegistroClienteComponent implements OnInit {
     this.signupCliente.reset();
   }
 
-  onSaveForm(){
+  saveCliente(){
   
-    if(this.signupCliente.valid){
-      this.onResetForm();
-      console.log('Valid');
-    } else {
-      console.log('Not valid');
-    }
+    this.clientesServices.save(this.cliente).subscribe((data)=>{
+      alert('Cliente guardado con exito');
+      console.log(data);
+    }, (error)=>{
+      console.log(error);
+      alert('Ocurrio un error.')
+    })
 
   }
 

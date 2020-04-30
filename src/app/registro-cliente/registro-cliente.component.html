@@ -2,14 +2,14 @@
 
     <div class="separacion"></div>
 
-    <form class="formulario" [formGroup]="signupCliente" (ngSubmit)="onSaveForm()">
+    <div class="formulario" [formGroup]="signupCliente">
         
         <h1>Registrate</h1>
         <div class="contenedor">
         
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <label><input type="text" formControlName="nombre" placeholder="Nombre Completo">  </label>
+                <label><input [(ngModel)]="cliente.nombre" type="text" formControlName="nombre" placeholder="Nombre Completo">  </label>
             </div>
 
             <div class="container-validaciones" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
@@ -20,7 +20,7 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-user-shield icon"></i>
-                <label><input type="text" formControlName="nif" placeholder="Nif"></label>
+                <label><input [(ngModel)]="cliente.nif" type="text" formControlName="nif" placeholder="Nif"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="nif.invalid && (nif.dirty || nif.touched)">
@@ -30,7 +30,7 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-road icon"></i>
-                <label><input type="text" formControlName="direccion" placeholder="Dirección"></label>
+                <label><input [(ngModel)]="cliente.direccion" type="text" formControlName="direccion" placeholder="Dirección"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
@@ -39,7 +39,7 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <label><input type="text" formControlName="email" placeholder="Correo Electronico"></label>
+                <label><input [(ngModel)]="cliente.correo" type="text" formControlName="email" placeholder="Correo Electronico"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="email.invalid && (email.dirty || email.touched)">
@@ -51,7 +51,7 @@
             
             <div class="input-contenedor">
                 <i class="fas fa-table icon"></i>
-                <label><input type="text" formControlName="fechaInscripcion" placeholder="Fecha de Inscripción"></label>
+                <label><input [(ngModel)]="cliente.fechaInscripcion" type="text" formControlName="fechaInscripcion" placeholder="Fecha de Inscripción"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="fechaInscripcion.invalid && (fechaInscripcion.dirty || fechaInscripcion.touched)">
@@ -61,7 +61,7 @@
             
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <label><input type="password" formControlName="contrasena" placeholder="Contraseña"></label>
+                <label><input [(ngModel)]="cliente.contrasena" type="password" formControlName="contrasena" placeholder="Contraseña"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)">
@@ -69,10 +69,10 @@
                 <h6 class="error-validaciones" *ngIf="contrasena.errors.minlength">La contraseña tiene que tener minimo 5 caracteres.</h6>
             </div>
 
-            <input type="submit" [disabled]="signupCliente.invalid" value="Registrate" class="button">
+            <input (click)="saveCliente()" [disabled]="signupCliente.invalid" value="Registrate" class="button">
             
             <p>¿Ya tienes una cuenta?<a class="link" routerLink="/usuarioAdmin" routerLinkActive="active"> Ir a clientes administrador</a></p>
             <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>
         </div>
-    </form>
+    </div>
 </div>

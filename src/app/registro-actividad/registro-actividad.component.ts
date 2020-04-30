@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Actividad } from '../interfaces/actividad';
+import { ActividadesService } from '../services/actividades.service';
 
 @Component({
   selector: 'app-registro-actividad',
@@ -10,18 +11,21 @@ import { Actividad } from '../interfaces/actividad';
 export class RegistroActividadComponent implements OnInit {
 
   signupCrearActividad: FormGroup;
+  
   actividad: Actividad = {
     nombre: null,
     codigo_monitor: null,
     informacion: null
   };
 
-  constructor(private _builder: FormBuilder) { 
+  constructor(private _builder: FormBuilder, private actividadesServices: ActividadesService) { 
+
     this.signupCrearActividad = this._builder.group({
       nombre: ['', Validators.compose( [Validators.required, Validators.minLength(4) ] ) ],
       monitor: ['', Validators.compose( [Validators.required] )],
       informacion: ['']
     });
+
   }
 
   ngOnInit(): void {
@@ -33,12 +37,13 @@ export class RegistroActividadComponent implements OnInit {
 
   saveActividad(){
   
-    if(this.signupCrearActividad.valid){
-      this.onResetForm();
-      console.log('Valid');
-    } else {
-      console.log('Not valid');
-    }
+    this.actividadesServices.save(this.actividad).subscribe((data)=>{
+      alert('Actividadad guardada con exito');
+      console.log(data);
+    }, (error)=>{
+      console.log(error);
+      alert('Ocurrio un error. Ten en cuenta que el codigo de monitor debe existir.')
+    })
 
   }
 

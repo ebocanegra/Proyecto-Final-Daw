@@ -2,13 +2,13 @@
 
     <div class="separacion"></div>
 
-    <form class="formulario" [formGroup]="signupCrearActividad" (ngSubmit)="saveActividad()">
+    <div class="formulario" [formGroup]="signupCrearActividad" (ngSubmit)="saveActividad()">
 
         <h1>Crear actividad</h1>
         <div class="contenedor">
             <div class="input-contenedor">
                 <i class="fas fa-users icon"></i>
-                <label> <input type="text" formControlName="nombre" placeholder="Nombre actividad"> </label>
+                <label> <input [(ngModel)]="actividad.nombre" type="text" id="nombre" formControlName="nombre" placeholder="Nombre actividad"> </label>
             </div>
 
             <div class="container-validaciones" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
@@ -18,7 +18,7 @@
             
             <div class="input-contenedor">
                 <i class="fas fa-dumbbell icon"></i>
-                <label> <input type="text" formControlName="monitor" placeholder="Codigo del monitor"></label>
+                <label> <input [(ngModel)]="actividad.codigo_monitor" type="text" id="monitor" formControlName="monitor" placeholder="Codigo del monitor"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="monitor.invalid && (monitor.dirty || monitor.touched)">
@@ -27,13 +27,13 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-info icon"></i>
-                <label> <input type="text" formControlName="informacion" placeholder="Información"></label>
+                <label> <input [(ngModel)]="actividad.informacion" type="text" id="informacion" formControlName="informacion" placeholder="Información"></label>
             </div>
 
-            <input type="submit" [disabled]="signupCrearActividad.invalid" value="Nueva actividad" class="button" routerLink="/" routerLinkActive="active">
+            <input (click)="saveActividad()" [disabled]="signupCrearActividad.invalid" value="Nueva actividad" class="button" routerLink="/actividadesAdmin" routerLinkActive="active">
             <p class="ajuste-link"><a class="link" routerLink="/actividadesAdmin" routerLinkActive="active">Ir a actividades del administrador</a></p>
             <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>
         </div>
-    </form>
+    </div>
 </div>
 

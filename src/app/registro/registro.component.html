@@ -2,14 +2,14 @@
 
     <div class="separacion"></div>
 
-    <form class="formulario" [formGroup]="signupForm" (ngSubmit)="onSaveForm()">
+    <form class="formulario" [formGroup]="signupForm">
         
         <h1>Registrate</h1>
         <div class="contenedor">
         
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <label><input type="text" formControlName="nombre" placeholder="Nombre Completo">  </label>
+                <label><input [(ngModel)]="monitor.nombre" type="text" formControlName="nombre" placeholder="Nombre Completo">  </label>
             </div>
 
             <div class="container-validaciones" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
@@ -20,7 +20,7 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-user-shield icon"></i>
-                <label><input type="text" formControlName="nif" placeholder="Nif"></label>
+                <label><input [(ngModel)]="monitor.nif" type="text" formControlName="nif" placeholder="Nif"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="nif.invalid && (nif.dirty || nif.touched)">
@@ -30,7 +30,7 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-road icon"></i>
-                <label><input type="text" formControlName="direccion" placeholder="Dirección"></label>
+                <label><input [(ngModel)]="monitor.direccion" type="text" formControlName="direccion" placeholder="Dirección"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
@@ -39,7 +39,7 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <label><input type="text" formControlName="email" placeholder="Correo Electronico"></label>
+                <label><input [(ngModel)]="monitor.correo" type="text" formControlName="email" placeholder="Correo Electronico"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="email.invalid && (email.dirty || email.touched)">
@@ -50,8 +50,8 @@
 
             
             <div class="input-contenedor">
-                <i class="fas fa-table icon"></i>
-                <label><input type="text" formControlName="telefono" placeholder="Teléfono"></label>
+                <i class="fas fa-phone icon"></i>
+                <label><input [(ngModel)]="monitor.telefono" type="text" formControlName="telefono" placeholder="Teléfono"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
@@ -61,7 +61,7 @@
             
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <label><input type="password" formControlName="contrasena" placeholder="Contraseña"></label>
+                <label><input [(ngModel)]="monitor.contrasena" type="password" formControlName="contrasena" placeholder="Contraseña"></label>
             </div>
 
             <div class="container-validaciones" *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)">
@@ -69,7 +69,7 @@
                 <h6 class="error-validaciones" *ngIf="contrasena.errors.minlength">La contraseña tiene que tener minimo 5 caracteres.</h6>
             </div>
 
-            <input type="submit" [disabled]="signupForm.invalid" value="Registrate" class="button">
+            <input (click)="saveMonitor()" [disabled]="signupForm.invalid" value="Registrate" class="button">
             
             <p>¿Ya tienes una cuenta?<a class="link" routerLink="/monitoresAdmin" routerLinkActive="active"> Ir a monitores administrador</a></p>
             <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>
