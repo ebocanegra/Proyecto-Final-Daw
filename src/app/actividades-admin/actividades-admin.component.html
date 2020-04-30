@@ -17,28 +17,28 @@
                         <input type="submit" value="Crear Actividad" class="button" routerLink="/crearActividad" routerLinkActive="active">
                     </div>
 
-                    
-                        <table class="table table-responsive table-striped ajuste-tabla">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Código monitor</th>
-                                    <th>Información</th>
-                                    <th>modificar</th>
-                                    <th>eliminar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let actividad of actividades">
-                                    <td>{{actividad.nombre}}</td>
-                                    <td>{{actividad.codigo_monitor}}</td>
-                                    <td>{{actividad.informacion}}</td>
-                                    <td>Modificar</td>
-                                    <td>Eliminar</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    
+                        <div class="table-responsive text-center">
+                            <table class="table table-striped ajuste-tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Código monitor</th>
+                                        <th>Información</th>
+                                        <th>modificar</th>
+                                        <th>eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let actividad of actividades">
+                                        <td>{{actividad.nombre}}</td>
+                                        <td>{{actividad.codigo_monitor}}</td>
+                                        <td>{{actividad.informacion}}</td>
+                                        <td>Modificar</td>
+                                        <td>Eliminar</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                 </div>
             </div>
