@@ -12,10 +12,11 @@ export class MonitoresAdminComponent implements OnInit {
   API_ENDPOINT = 'http://pi.diiesmurgi.org/~eduardo/public/api/';
   monitores: Monitor[];
   recibidoMonitor: any;
-  
+  //filasTotales: any;
   constructor(private monitoresService:MonitoresService, private httpClient: HttpClient ) {
 
     this.httpClient.get(this.API_ENDPOINT + 'monitores').subscribe((data: Monitor[]) => {
+      //this.filasTotales= filasTotales;
       this.recibidoMonitor = data;
       this.monitores=this.recibidoMonitor.data;
     });
