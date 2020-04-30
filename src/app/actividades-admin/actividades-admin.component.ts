@@ -11,11 +11,14 @@ import { Actividad } from '../interfaces/actividad';
 export class ActividadesAdminComponent implements OnInit {
   API_ENDPOINT = 'http://pi.diiesmurgi.org/~eduardo/public/api/';
   actividades: Actividad[];
+  recibido: any;
   constructor(private actividadesService: ActividadesService, private httpClient: HttpClient) {
-    httpClient.get(this.API_ENDPOINT + 'actividades').subscribe((data: Actividad[]) => {
-      this.actividades = data;
+    this.httpClient.get(this.API_ENDPOINT + 'actividades').subscribe((data: Actividad[]) => {
+      this.recibido = data;
+      this.actividades=this.recibido.data;
     });  
   }
+  
 
   ngOnInit(): void {
   }

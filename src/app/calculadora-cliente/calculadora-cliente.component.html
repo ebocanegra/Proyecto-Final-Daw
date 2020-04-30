@@ -8,11 +8,11 @@
                 <h6 class="color-blanco">El IMC se utiliza para clasificar el estado ponderal de la persona</h6>
                 
                 <form [formGroup]="signupCalculadora">
-                    <input class="estilo-input" formControlName="valor1" id="val1" type="text" [(ngModel)]="val1" placeholder="Peso / kg">
+                    <input class="estilo-input"  formControlName="valor1" id="val1" type="text" [(ngModel)]="val1" placeholder="Peso / kg">
 
                     <div class="container-validaciones" *ngIf="valor1.invalid && (valor1.dirty || valor1.touched)">
                         <h6 class="error-validaciones" *ngIf="valor1.errors.required">Peso obligatorio.</h6>
-                        <h6 class="error-validaciones" *ngIf="valor1.errors.maxlength">El peso maximo es de 3 digitos.</h6>
+                        <h6 class="error-validaciones" *ngIf="valor1.errors.maxlength">El peso maximo es de 5 digitos.</h6>
                    </div>
 
                     <input class="estilo-input" formControlName="valor2" id="val2" type="text" [(ngModel)]="val2" placeholder="Altura / m"><br>
@@ -24,7 +24,7 @@
                     </div>
 
                     <input class="boton" type="button" [disabled]="signupCalculadora.invalid" (click)="CalcularIMC()" value="CALCULAR">
-                    <h3 class="resultado">Tu IMC es: {{resultadoTotal}}</h3>
+                    <h3 class="resultado">{{resultadoTotal}}</h3>
                 </form>
 
             </div>
@@ -34,6 +34,7 @@
                     <tr>
                         <th scope="col">IMC</th>
                         <th scope="col">ESTADO</th>
+                        
                     </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,7 @@
                             <td>Obesidad</td>
                         </tr>
                     </tbody>
+                    
                     
                 </table>
             </div>

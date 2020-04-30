@@ -29,6 +29,9 @@ import { RutinaPrincipianteComponent } from './rutina-principiante/rutina-princi
 import { RutinaAvanzadaComponent } from './rutina-avanzada/rutina-avanzada.component';
 import { RutinaCasaComponent } from './rutina-casa/rutina-casa.component';
 import { RegistroActividadComponent } from './registro-actividad/registro-actividad.component';
+import { MonitoresAdminComponent } from './monitores-admin/monitores-admin.component';
+import { RegistroErrorComponent } from './registro-error/registro-error.component';
+import { RegistroClienteComponent } from './registro-cliente/registro-cliente.component';
 
 const appRoutes:Routes=[
   {
@@ -52,8 +55,16 @@ const appRoutes:Routes=[
     component: RegistroComponent
   },
   {
+    path:'registroError',
+    component: RegistroErrorComponent
+  },
+  {
     path:'inicioAdmin',
     component: InicioAdminComponent
+  },
+  {
+    path:'registroCliente',
+    component: RegistroClienteComponent
   },
   {
     path:'actividadesAdmin',
@@ -62,6 +73,10 @@ const appRoutes:Routes=[
   {
     path:'usuarioAdmin',
     component: UsuarioAdminComponent
+  },
+  {
+    path:'monitoresAdmin',
+    component: MonitoresAdminComponent
   },
   {
     path:'inicioCliente',
@@ -115,6 +130,9 @@ const appRoutes:Routes=[
     RutinaAvanzadaComponent,
     RutinaCasaComponent,
     RegistroActividadComponent,
+    MonitoresAdminComponent,
+    RegistroErrorComponent,
+    RegistroClienteComponent,
   ],
   imports: [
     BrowserModule,

@@ -36,6 +36,7 @@
     border: none;
     border-radius: 100px;
     padding: 2%;
+    margin-top: 5%;
 }
 
 .boton:hover:not([disabled]){
@@ -51,9 +52,12 @@
 .container-validaciones{
     background: #f8d7da !important;
     border-color: #f5c6cb !important;
-    margin-bottom: 5px;
+    width: 60%;
+    border-radius: 5px;
+    padding: 3px;
 }
 
 .error-validaciones{
     color: #721c24;
+    margin-left: 10px;
 }

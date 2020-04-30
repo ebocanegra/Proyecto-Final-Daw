@@ -12,6 +12,7 @@ export class RegistroActividadComponent implements OnInit {
   signupCrearActividad: FormGroup;
   actividad: Actividad = {
     nombre: null,
+    codigo_monitor: null,
     informacion: null
   };
 

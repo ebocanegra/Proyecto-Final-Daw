@@ -1,0 +1,53 @@
+.contenedor-total {
+    font-family: Arial,  sans-serif;
+    margin: 0;
+    background: url(../../assets/img/fondo1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    padding-bottom: 7%;
+  
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.vacio{
+    padding-top: 10%;
+}
+
+.contenedor-inf{
+    width: 50%;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: white;
+    margin: auto  !important;
+    
+}
+
+h6{
+    color: black;
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    padding-bottom: 5%;
+    font-size: 18px;
+}
+
+.link{
+    text-decoration: none;
+    color: #1a2537;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+}
+
+.link:hover{
+    color: cadetblue;
+}

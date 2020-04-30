@@ -1,20 +1,19 @@
 <app-nav-admin></app-nav-admin>
-<!--Pagina Clientes-->
+<!--Pagina Monitores-->
 
 <div class="container-fluid tamaño-total">
 
     <section class="tamaño-inf"> 
         <div class="row">
             <div class="col-md-12 col-lg-12">
-        
                 <div class="row">
                     <div class="col-md-12 col-lg-12 contenedor-inf">
                         <div>
-                            <h5 class="estilo-titulo">Número de clientes:  - CLIENTES</h5>
+                            <h5 class="estilo-titulo">Número de monitores:  - MONITORES</h5>
                         </div>
 
                         <div class="container-btn-crear">
-                            <input type="submit" value="Crear cliente" class="button" routerLink="/registroCliente" routerLinkActive="active">
+                            <input type="submit" value="Crear Monitor" class="button" routerLink="/registro" routerLinkActive="active">
                         </div>
 
                         <table class="table table-responsive table-striped ajuste-tabla">
@@ -25,25 +24,25 @@
                                 <th scope="col">Nif</th>
                                 <th scope="col">Dirección</th>
                                 <th scope="col">Correo</th>
-                                <th scope="col">Fecha de inscripción</th>
+                                <th scope="col">Teléfono</th>
                                 <th scope="col">Eliminar</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr *ngFor="let cliente of clientes">
-                                <td>{{cliente.codigo}}</td>
-                                <td>{{cliente.nombre}}</td>
-                                <td>{{cliente.nif}}</td>
-                                <td>{{cliente.direccion}}</td>
-                                <td>{{cliente.correo}}</td>
-                                <td>{{cliente.fechaInscripcion}}</td>
+                            <tr *ngFor="let monitor of monitores">
+                                <td>{{monitor.codigo}}</td>
+                                <td>{{monitor.nombre}}</td>
+                                <td>{{monitor.nif}}</td>
+                                <td>{{monitor.direccion}}</td>
+                                <td>{{monitor.correo}}</td>
+                                <td>{{monitor.telefono}}</td>
                                 <td>X</td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </section>
 </div>
