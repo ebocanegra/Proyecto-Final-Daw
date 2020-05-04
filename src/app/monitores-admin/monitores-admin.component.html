@@ -20,13 +20,12 @@
                             <table class="table table-striped ajuste-tabla">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Codigo</th>
+                                    <th scope="col">Código</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Nif</th>
                                     <th scope="col">Dirección</th>
                                     <th scope="col">Correo</th>
                                     <th scope="col">Teléfono</th>
-                                    <th scope="col">Eliminar</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -37,7 +36,7 @@
                                     <td>{{monitor.direccion}}</td>
                                     <td>{{monitor.correo}}</td>
                                     <td>{{monitor.telefono}}</td>
-                                    <td>X</td>
+                                    <td><a class="button" (click)="delete(monitor.codigo)">Eliminar</a></td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -16,7 +16,13 @@ export class MonitoresAdminComponent implements OnInit {
   filasTotalesMonitores:any;
 
   constructor(private monitoresService:MonitoresService, private httpClient: HttpClient ) {
+    this.getMonitores();
+   }
 
+  ngOnInit(): void {
+  }
+
+  getMonitores(){
     this.httpClient.get(this.API_ENDPOINT + 'monitores').subscribe((data: Monitor[]) => {
       this.recibidoMonitor = data;
       this.monitores=this.recibidoMonitor.data;
@@ -26,10 +32,22 @@ export class MonitoresAdminComponent implements OnInit {
       this.filasTotalesMonitores = filasTotales;
       this.monitoresTotales=this.filasTotalesMonitores.filasTotales;
     });
+  }
 
-   }
+  delete(codigo){
 
-  ngOnInit(): void {
+    if(confirm("Seguro que deseas eliminar el monitor? Se eliminaran las actividadas relacionadas con él.")){
+      this.monitoresService.delete(codigo).subscribe((data)=>{
+        alert('Monitor eliminado con exito');
+        console.log(data);
+        this.getMonitores();
+      }, (error)=>{
+        console.log(error);
+        alert('Ocurrio un error al eliminar el monitor.');
+      });
+    }//Fin del if
+
+    
   }
 
 }

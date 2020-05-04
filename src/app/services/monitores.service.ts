@@ -10,9 +10,17 @@ export class MonitoresService {
   monitores: Monitor[];
   constructor(private httpClient: HttpClient) { }
 
+  get(){
+    return this.httpClient.get(this.API_ENDPOINT+"monitores");
+  }
+
   save(monitores: Monitor ) {
     const headers = new HttpHeaders({'Content-Type':'application/json'});
     return this.httpClient.post(this.API_ENDPOINT+'monitores', monitores, {headers: headers});
+  }
+
+  delete(codigo){
+    return this.httpClient.delete(this.API_ENDPOINT+"monitores/" + codigo);
   }
 
 }
