@@ -15,6 +15,8 @@ export class ActividadesAdminComponent implements OnInit {
   recibido: any;
   filasTotalesActividades: any;
 
+  pageActual: number = 1;
+
   constructor(private actividadesService: ActividadesService, private httpClient: HttpClient) {
     this.getActividades();
   }

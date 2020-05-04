@@ -15,6 +15,8 @@ export class MonitoresAdminComponent implements OnInit {
   recibidoMonitor: any;
   filasTotalesMonitores:any;
 
+  pageActual: number = 1;
+
   constructor(private monitoresService:MonitoresService, private httpClient: HttpClient ) {
     this.getMonitores();
    }

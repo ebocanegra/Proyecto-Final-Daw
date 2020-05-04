@@ -29,7 +29,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr *ngFor="let monitor of monitores">
+                                <tr *ngFor="let monitor of monitores | paginate: {itemsPerPage: 10, currentPage: pageActual}">
                                     <td>{{monitor.codigo}}</td>
                                     <td>{{monitor.nombre}}</td>
                                     <td>{{monitor.nif}}</td>
@@ -41,6 +41,8 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
                         
                     </div>
                 </div>

@@ -31,7 +31,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr *ngFor="let cliente of clientes">
+                                <tr *ngFor="let cliente of clientes | paginate: {itemsPerPage: 10, currentPage: pageActual}">
                                     <td>{{cliente.codigo}}</td>
                                     <td>{{cliente.nombre}}</td>
                                     <td>{{cliente.nif}}</td>
@@ -43,6 +43,9 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+                        
                     </div>
                 </div>
             </div>

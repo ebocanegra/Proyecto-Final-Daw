@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { Routes, RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -144,7 +145,8 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

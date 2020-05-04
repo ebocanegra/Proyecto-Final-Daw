@@ -25,24 +25,8 @@ export class RegistroComponent implements OnInit {
   };
 
   signupForm: FormGroup;
- /* codigo: any;
-  modificar: boolean=false;
-  monitores: Monitor[];*/
+
   constructor( private _builder: FormBuilder, private monitoresServices: MonitoresService, private activatedRoute: ActivatedRoute ) {
-
-    /*this.codigo= this.activatedRoute.snapshot.params['codigo'];
-
-    if(this.codigo){
-      this.modificar=true;
-      this.monitoresServices.get().subscribe((data: Monitor[])=>{
-        this.monitores=data;
-        this.monitor=this.monitores.find((m)=>{return m.codigo==this.codigo});
-      }, (error)=>{
-        console.log(error)
-      });
-    }else{
-      this.modificar=false
-    }*/
 
     this.signupForm = this._builder.group({
       nombre: ['', Validators.compose( [Validators.required, Validators.minLength(5) ] ) ],
