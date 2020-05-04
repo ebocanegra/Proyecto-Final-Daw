@@ -105,6 +105,10 @@ const appRoutes:Routes=[
   {
     path:'crearActividad',
     component: RegistroActividadComponent
+  },
+  {
+    path:'crearActividad/:codigo',
+    component: RegistroActividadComponent
   }
 ];
 

@@ -21,20 +21,23 @@
                             <table class="table table-striped ajuste-tabla">
                                 <thead>
                                     <tr>
+                                        <th>Código</th>
                                         <th>Nombre</th>
                                         <th>Código monitor</th>
                                         <th>Información</th>
-                                        <th>modificar</th>
-                                        <th>eliminar</th>
+                                        <th></th>
+                                        <th></th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let actividad of actividades">
+                                        <td>{{actividad.codigo}}</td>
                                         <td>{{actividad.nombre}}</td>
                                         <td>{{actividad.codigo_monitor}}</td>
                                         <td>{{actividad.informacion}}</td>
-                                        <td>Modificar</td>
-                                        <td>Eliminar</td>
+                                        <td><a class="button" routerLink="/crearActividad/{{actividad.codigo}}" routerLinkActive="active">Modificar</a></td>
+                                        <td> <a class="button" (click)="delete(actividad.codigo)">Eliminar</a></td>
                                     </tr>
                                 </tbody>
                             </table>

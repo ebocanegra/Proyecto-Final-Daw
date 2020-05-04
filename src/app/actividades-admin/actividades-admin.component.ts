@@ -16,20 +16,42 @@ export class ActividadesAdminComponent implements OnInit {
   filasTotalesActividades: any;
 
   constructor(private actividadesService: ActividadesService, private httpClient: HttpClient) {
-    this.httpClient.get(this.API_ENDPOINT + 'actividades').subscribe((data: Actividad[]) => {
-      this.recibido = data;
-      this.actividades=this.recibido.data;
-    }); 
-    
-    this.httpClient.get(this.API_ENDPOINT + 'actividades').subscribe((filasTotales: Actividad[]) => {
-      this.filasTotalesActividades = filasTotales;
-      this.actividadesTotales=this.filasTotalesActividades.filasTotales;
-    });
-
+    this.getActividades();
   }
   
 
   ngOnInit(): void {
   }
+
+  getActividades(){
+    this.httpClient.get(this.API_ENDPOINT + 'actividades').subscribe((data: Actividad[]) => {
+      this.recibido = data;
+      this.actividades=this.recibido.data;
+    });
+
+    this.httpClient.get(this.API_ENDPOINT + 'actividades').subscribe((filasTotales: Actividad[]) => {
+      this.filasTotalesActividades = filasTotales;
+      this.actividadesTotales=this.filasTotalesActividades.filasTotales;
+    });
+  }
+
+
+  delete(codigo){
+
+    if(confirm("Seguro que deseas eliminar la actividad?")){
+      this.actividadesService.delete(codigo).subscribe((data)=>{
+        alert('Actividadad eliminada con exito');
+        console.log(data);
+        this.getActividades();
+      }, (error)=>{
+        console.log(error);
+        alert('Ocurrio un error al eliminar.');
+      });
+    }//Fin del if
+
+    
+  }
+
+
 
 }

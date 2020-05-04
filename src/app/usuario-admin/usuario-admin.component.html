@@ -21,13 +21,13 @@
                             <table class="table table-striped ajuste-tabla">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Codigo</th>
+                                    <th scope="col">Código</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Nif</th>
                                     <th scope="col">Dirección</th>
                                     <th scope="col">Correo</th>
                                     <th scope="col">Fecha de inscripción</th>
-                                    <th scope="col">Eliminar</th>
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -38,7 +38,7 @@
                                     <td>{{cliente.direccion}}</td>
                                     <td>{{cliente.correo}}</td>
                                     <td>{{cliente.fechaInscripcion}}</td>
-                                    <td>X</td>
+                                    <td> <a class="button" (click)="delete(cliente.codigo)">Eliminar</a> </td>
                                 </tr>
                                 </tbody>
                             </table>
