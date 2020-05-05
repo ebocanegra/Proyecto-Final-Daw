@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import {NgxSpinnerService} from 'ngx-spinner'
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Proyecto Eduardo';
+
+  constructor(private spinnerService: NgxSpinnerService){}
+
+  ngOnInit(){
+    this.spinner();
+  }
+
+  spinner(): void{
+    this.spinnerService.show();
+
+    setTimeout(()=>{
+      this.spinnerService.hide();
+    }, 2000);
+
+  }
+
 }

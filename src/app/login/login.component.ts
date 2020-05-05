@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,10 +11,13 @@ export class LoginComponent implements OnInit {
 
   signupLogin: FormGroup;
   constructor(private _builder: FormBuilder) {
+
     this.signupLogin = this._builder.group({
       nombre: ['', Validators.compose( [Validators.required, Validators.minLength(5) ] ) ],
       contrasena: ['', Validators.compose( [Validators.required, Validators.minLength(5) ] )]
     });
+    
+
    }
 
   ngOnInit(): void {

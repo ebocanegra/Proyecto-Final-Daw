@@ -13,6 +13,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
+import {NgxSpinnerModule} from 'ngx-spinner'
+
+
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
@@ -146,7 +149,8 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
