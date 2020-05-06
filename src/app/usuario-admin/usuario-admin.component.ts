@@ -16,6 +16,8 @@ export class UsuarioAdminComponent implements OnInit {
   filasTotalesClientes: any;
   recibidoTotales: any;
 
+  filterCliente = '';
+
   pageActual: number = 1;
 
   constructor(private clientesService:ClientesService, private httpClient: HttpClient) {

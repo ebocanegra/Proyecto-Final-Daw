@@ -8,6 +8,7 @@ export class ClientesService {
 
   API_ENDPOINT = 'http://pi.diiesmurgi.org/~eduardo/public/api/';
   clientes: Cliente[];
+
   constructor(private httpClient: HttpClient) {}
 
   get(){

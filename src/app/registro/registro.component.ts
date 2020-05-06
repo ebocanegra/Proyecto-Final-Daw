@@ -48,7 +48,7 @@ export class RegistroComponent implements OnInit {
   saveMonitor(){
   
     this.monitoresServices.save(this.monitor).subscribe((data)=>{
-      alert('Cliente guardado con exito');
+      alert('Monitor guardado con exito');
       console.log(data);
     }, (error)=>{
       console.log(error);

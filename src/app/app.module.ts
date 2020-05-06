@@ -9,12 +9,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
+
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
 import {NgxSpinnerModule} from 'ngx-spinner'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
@@ -36,6 +38,7 @@ import { RegistroActividadComponent } from './registro-actividad/registro-activi
 import { MonitoresAdminComponent } from './monitores-admin/monitores-admin.component';
 import { RegistroErrorComponent } from './registro-error/registro-error.component';
 import { RegistroClienteComponent } from './registro-cliente/registro-cliente.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes:Routes=[
   {
@@ -141,6 +144,7 @@ const appRoutes:Routes=[
     MonitoresAdminComponent,
     RegistroErrorComponent,
     RegistroClienteComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -150,7 +154,8 @@ const appRoutes:Routes=[
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

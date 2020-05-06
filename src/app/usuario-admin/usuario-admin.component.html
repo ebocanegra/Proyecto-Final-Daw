@@ -17,6 +17,15 @@
                             <input type="submit" value="Crear cliente" class="button" routerLink="/registroCliente" routerLinkActive="active">
                         </div>
 
+                        <div class="container buscar form-group">
+                            <div class="input-group">
+                                <div class="input-group-text bg-white">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                                <input title="Buscar solo en la primera página!" type="text" class="form-control" name="filterCliente" placeholder="Buscar.." [(ngModel)]="filterCliente">
+                            </div>
+                        </div>
+
                         <div class="table-responsive text-center">
                             <table class="table table-striped ajuste-tabla">
                                 <thead>
@@ -31,7 +40,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr *ngFor="let cliente of clientes | paginate: {itemsPerPage: 10, currentPage: pageActual}">
+                                <tr *ngFor="let cliente of clientes | filter: 'nombre':filterCliente | paginate: {itemsPerPage: 10, currentPage: pageActual} ">
                                     <td>{{cliente.codigo}}</td>
                                     <td>{{cliente.nombre}}</td>
                                     <td>{{cliente.nif}}</td>

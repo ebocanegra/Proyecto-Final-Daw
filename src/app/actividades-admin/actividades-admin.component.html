@@ -17,6 +17,15 @@
                         <input type="submit" value="Crear Actividad" class="button" routerLink="/crearActividad" routerLinkActive="active">
                     </div>
 
+                    <div class="container buscar form-group">
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <input title="Buscar solo en la primera página!" type="text" class="form-control" name="filterActividad" placeholder="Buscar.." [(ngModel)]="filterActividad">
+                        </div>
+                    </div>
+
                         <div class="table-responsive text-center">
                             <table class="table table-striped ajuste-tabla">
                                 <thead>
@@ -31,7 +40,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let actividad of actividades | paginate: {itemsPerPage: 10, currentPage: pageActual}">
+                                    <tr *ngFor="let actividad of actividades | filter: 'nombre':filterActividad | paginate: {itemsPerPage: 10, currentPage: pageActual}">
                                         <td>{{actividad.codigo}}</td>
                                         <td>{{actividad.nombre}}</td>
                                         <td>{{actividad.codigo_monitor}}</td>
