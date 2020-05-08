@@ -40,7 +40,27 @@ import { RegistroErrorComponent } from './registro-error/registro-error.componen
 import { RegistroClienteComponent } from './registro-cliente/registro-cliente.component';
 import { FilterPipe } from './pipes/filter.pipe';
 
-const appRoutes:Routes=[
+const appRoutes:Routes = [
+  
+  
+  /*{
+    path:'', component: NavComponent,
+    children: [
+      {
+        path:'',
+        component: MainComponent
+      },
+      {
+        path:'actividades',
+        component: ActividadesComponent
+      },
+      {
+        path:'personal',
+        component: PersonalComponent
+      },
+    ]
+  },*/
+  
   {
     path:'',
     component: MainComponent

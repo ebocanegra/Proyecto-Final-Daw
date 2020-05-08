@@ -71,8 +71,11 @@
 
             <input (click)="saveMonitor()" [disabled]="signupForm.invalid" value="Registrate" class="button">
             
-            <p>¿Ya tienes una cuenta?<a class="link" routerLink="/monitoresAdmin" routerLinkActive="active"> Ir a monitores administrador</a></p>
-            <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>
+            <div class="pt-3 text-center">
+                <a class="link" routerLink="/monitoresAdmin" routerLinkActive="active"> Ir a monitores del administrador</a>
+                <br>
+                <a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a>
+            </div>
         </div>
     </form>
 </div>

@@ -17,7 +17,7 @@
                             <input type="submit" value="Crear cliente" class="button" routerLink="/registroCliente" routerLinkActive="active">
                         </div>
 
-                        <div class="container buscar form-group">
+                        <div class="container buscar form-group" *ngIf="pageActual==1">
                             <div class="input-group">
                                 <div class="input-group-text bg-white">
                                     <i class="fa fa-search"></i>
@@ -40,7 +40,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr *ngFor="let cliente of clientes | filter: 'nombre':filterCliente | paginate: {itemsPerPage: 10, currentPage: pageActual} ">
+                                <tr  *ngFor="let cliente of clientes | filter: 'nombre':filterCliente  | paginate: {itemsPerPage: 10, currentPage: pageActual} ">
+                                   
                                     <td>{{cliente.codigo}}</td>
                                     <td>{{cliente.nombre}}</td>
                                     <td>{{cliente.nif}}</td>
@@ -48,6 +49,7 @@
                                     <td>{{cliente.correo}}</td>
                                     <td>{{cliente.fechaInscripcion}}</td>
                                     <td> <a class="button" (click)="delete(cliente.codigo)">Eliminar</a> </td>
+                                    
                                 </tr>
                                 </tbody>
                             </table>

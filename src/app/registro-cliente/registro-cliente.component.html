@@ -71,8 +71,12 @@
 
             <input (click)="saveCliente()" [disabled]="signupCliente.invalid" value="Registrate" class="button">
             
-            <p>¿Ya tienes una cuenta?<a class="link" routerLink="/usuarioAdmin" routerLinkActive="active"> Ir a clientes administrador</a></p>
-            <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>
+            <div class="pt-3 text-center">
+                <a class="link" routerLink="/usuarioAdmin" routerLinkActive="active"> Ir a clientes del administrador</a>
+                <br>
+                <a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a>
+            </div>
+
         </div>
     </div>
 </div>

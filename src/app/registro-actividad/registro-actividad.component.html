@@ -30,9 +30,12 @@
                 <label> <input [(ngModel)]="actividad.informacion" type="text" id="informacion" formControlName="informacion" placeholder="Información"></label>
             </div>
 
-            <input (click)="saveActividad()" [disabled]="signupCrearActividad.invalid" value="Nueva actividad" class="button">
-            <p class="ajuste-link"><a class="link" routerLink="/actividadesAdmin" routerLinkActive="active">Ir a actividades del administrador</a></p>
-            <p><a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a></p>
+            <input (click)="saveActividad()" [disabled]="signupCrearActividad.invalid" value="Crear actividad" class="button">
+            <div class="pt-3 text-center">
+                <a class="link" routerLink="/actividadesAdmin" routerLinkActive="active">Ir a actividades del administrador</a>
+                <br>
+                <a class="link" routerLink="/" routerLinkActive="active">Ir al inicio</a>
+            </div>
         </div>
     </div>
 </div>
