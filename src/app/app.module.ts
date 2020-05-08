@@ -43,7 +43,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 const appRoutes:Routes = [
   
   
-  /*{
+  {
     path:'', component: NavComponent,
     children: [
       {
@@ -59,20 +59,62 @@ const appRoutes:Routes = [
         component: PersonalComponent
       },
     ]
-  },*/
-  
-  {
-    path:'',
-    component: MainComponent
   },
+
   {
-    path:'actividades',
-    component: ActividadesComponent
+    path:'', component: NavClienteComponent,
+    children: [
+      {
+        path:'inicioCliente',
+        component: InicioClienteComponent
+      },
+      {
+        path:'rutinasCliente', component: RutinasClienteComponent
+      },
+      {
+        path:'rutinaPrincipiante',
+        component: RutinaPrincipianteComponent
+      },
+      {
+        path:'rutinaAvanzada',
+        component: RutinaAvanzadaComponent
+      },
+      {
+        path:'rutinaCasa',
+        component: RutinaCasaComponent
+      },
+      {
+        path:'calculadoraCliente',
+        component: CalculadoraClienteComponent
+      },
+      
+    ]
   },
+ 
+
   {
-    path:'personal',
-    component: PersonalComponent
+    path:'', component: NavAdminComponent,
+    children: [
+      {
+        path:'inicioAdmin',
+        component: InicioAdminComponent
+      },
+      {
+        path:'actividadesAdmin',
+        component: ActividadesAdminComponent
+      },
+      {
+        path:'usuarioAdmin',
+        component: UsuarioAdminComponent
+      },
+      {
+        path:'monitoresAdmin',
+        component: MonitoresAdminComponent
+      },
+      
+    ]
   },
+
   {
     path:'login',
     component: LoginComponent
@@ -85,50 +127,12 @@ const appRoutes:Routes = [
     path:'registroError',
     component: RegistroErrorComponent
   },
-  {
-    path:'inicioAdmin',
-    component: InicioAdminComponent
-  },
+  
   {
     path:'registroCliente',
     component: RegistroClienteComponent
   },
-  {
-    path:'actividadesAdmin',
-    component: ActividadesAdminComponent
-  },
-  {
-    path:'usuarioAdmin',
-    component: UsuarioAdminComponent
-  },
-  {
-    path:'monitoresAdmin',
-    component: MonitoresAdminComponent
-  },
-  {
-    path:'inicioCliente',
-    component: InicioClienteComponent
-  },
-  {
-    path:'calculadoraCliente',
-    component: CalculadoraClienteComponent
-  },
-  {
-    path:'rutinasCliente',
-    component: RutinasClienteComponent
-  },
-  {
-    path:'rutinaPrincipiante',
-    component: RutinaPrincipianteComponent
-  },
-  {
-    path:'rutinaAvanzada',
-    component: RutinaAvanzadaComponent
-  },
-  {
-    path:'rutinaCasa',
-    component: RutinaCasaComponent
-  },
+  
   {
     path:'crearActividad',
     component: RegistroActividadComponent
