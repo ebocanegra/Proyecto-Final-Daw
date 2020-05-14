@@ -39,6 +39,9 @@ import { MonitoresAdminComponent } from './monitores-admin/monitores-admin.compo
 import { RegistroErrorComponent } from './registro-error/registro-error.component';
 import { RegistroClienteComponent } from './registro-cliente/registro-cliente.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { InicioMonitorComponent } from './inicio-monitor/inicio-monitor.component';
+import { NavMonitorComponent } from './nav-monitor/nav-monitor.component';
+import { ActividadesMonitorComponent } from './actividades-monitor/actividades-monitor.component';
 
 const appRoutes:Routes = [
   
@@ -116,6 +119,20 @@ const appRoutes:Routes = [
   },
 
   {
+    path:'', component: NavMonitorComponent,
+    children: [
+      {
+        path:'inicioMonitor',
+        component: InicioMonitorComponent
+      }, 
+      {
+        path:'actividadesMonitor',
+        component: ActividadesMonitorComponent
+      },      
+    ]
+  },
+
+  {
     path:'login',
     component: LoginComponent
   },
@@ -140,6 +157,9 @@ const appRoutes:Routes = [
   {
     path:'crearActividad/:codigo',
     component: RegistroActividadComponent
+  },
+  {
+    path:'**', pathMatch: 'full', redirectTo: '/'
   }
 ];
 
@@ -169,6 +189,9 @@ const appRoutes:Routes = [
     RegistroErrorComponent,
     RegistroClienteComponent,
     FilterPipe,
+    InicioMonitorComponent,
+    NavMonitorComponent,
+    ActividadesMonitorComponent,
   ],
   imports: [
     BrowserModule,

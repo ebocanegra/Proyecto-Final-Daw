@@ -1,0 +1,81 @@
+/*------ CSS de la pagina web ------*/
+.tamaño-total{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .tamaño-inf{
+    width: 80%;
+    margin-top: 5%;
+  }
+    
+   
+  .contenedor-inf{
+    margin-top: 3%;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0px;
+  }
+
+  .estilo-titulo{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #35518D;
+    color: white;
+    text-align: center;
+    border-right: 1px solid #35518D;
+    border-left: 1px solid #35518D;
+    border-top: 1px solid #35518D;
+    border-radius: 4px;
+  }
+
+  .container-btn-crear {
+    text-align: end;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .button{
+    border: none;
+    color: white !important;
+    font-size: 20px;
+    background:  #1a2537;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover{
+    background: cadetblue;
+}
+
+.ajuste-tabla{
+  text-align: center;
+}
+
+.container-table{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.t1{
+  font-weight:  bold;
+  padding-bottom: 5px;
+
+}
+.t2{
+  padding: 2%;
+}
+
+.container-actividades{
+  padding-bottom: 3%;
+}
+  
+.buscar{
+  padding-top: 1%;
+  padding-bottom: 3%;
+}

@@ -1,0 +1,53 @@
+<!--Pagina Actividades-->
+
+<div class="container-fluid tamaño-total">
+
+    <section class="row tamaño-inf"> 
+
+        <div class="col-md-12 col-sm-12 ">
+        
+            <div class="row">
+                <div class="col-md-12 col-sm-12 contenedor-inf">
+                    <div>
+                        <h5 class="estilo-titulo">Número de actividades:  {{actividadesTotales}} ACTIVIDADES</h5>
+                    </div>
+        
+                    <div class="container buscar form-group" *ngIf="pageActual==1">
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <input title="Buscar solo en la primera página!" type="text" class="form-control" name="filterActividad" placeholder="Buscar por nombre.." [(ngModel)]="filterActividad">
+                        </div>
+                    </div>
+
+                        <div class="table-responsive text-center">
+                            <table class="table table-striped ajuste-tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nombre</th>
+                                        <th>Código monitor</th>
+                                        <th>Información</th>
+                                        <th></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let actividad of actividades | filter: 'nombre':filterActividad | paginate: {itemsPerPage: 10, currentPage: pageActual}">
+                                        <td>{{actividad.codigo}}</td>
+                                        <td>{{actividad.nombre}}</td>
+                                        <td>{{actividad.codigo_monitor}}</td>
+                                        <td>{{actividad.informacion}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+
+                </div>
+            </div>
+        </div> 
+    </section>
+</div>
