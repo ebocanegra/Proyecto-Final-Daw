@@ -2,6 +2,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <picture>
+        <source srcset="assets/img/logo/logo-80.svg" type="image/svg+xml"  alt="logo">
+        <img class="ajuste-logo" routerLink="/" routerLinkActive="active" src="assets/img/logo/logoB1.jpg" alt="logo" title="logo">  
+    </picture>
+
+    <div class="btn navbar-toggler d-lg-none d-block">
+        <span class="navbar-toggler-icon"></span>
+    </div>
+    <div class="navbar-collapse nav-vertical centrar-nav" id="navbarNav">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" routerLink="/" routerLinkActive="active">INICIO</a>
+            <a class="nav-item nav-link" routerLink="/actividades" routerLinkActive="active">ACTIVIDADES</a>
+            <a class="nav-item nav-link" routerLink="/personal" routerLinkActive="active">PERSONAL</a>
+            <a class="nav-link letra-nav botonLogin rotate-center" routerLink="/login" routerLinkActive="active">LOGIN</a>
+        </div>
+    </div>
+</nav>
+
+<!--
 <nav class=" container-fluid navbar navbar-expand-lg navbar-light fondoImg">
 
     <div class="row">
@@ -54,7 +75,7 @@
     </div>
 
 </nav>
-
+-->
 <!-- Boton hacia arriba -->
 <a class="ir-arriba" title="Volver arriba">
     <span class="fa-stack">

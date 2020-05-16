@@ -9,7 +9,6 @@ body {
 }
 
 .container-primero{
-  margin-top: 0.5%;
   margin-bottom: 2%;
   background-image: url(../../assets/img/fondo4.jpg);
   background-repeat: no-repeat;
@@ -24,10 +23,35 @@ body {
 .strong{
   /*color: #FB5B21;*/
   color: white;
-  font-size: 300%;
+  font-size: 150%;
   margin-left: 1%;
   font-family: teko !important;
   margin-left: 5%;
+  border-left: 3px solid white ;
+  padding-left: 10px;
+}
+
+.strong:hover{
+  font-size: 151%;
+}
+
+/*HORARIOS DE LAS ACTIVIDADES*/
+
+.container-actividades{
+  margin-top: 7%;
+  background-image: url(../../assets/img/fondo-horarios.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+
+.color-tabla{
+  color: white ;
+}
+
+.color-filas{
+  color: black;
 }
 
 /*Animacion*/

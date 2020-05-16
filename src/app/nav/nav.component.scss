@@ -1,71 +1,29 @@
-.contenedor-nav {
-    margin: auto;
-  }
-  
-  .letra-nav {
-    text-align: center;
-  }
-  
-  .letra-nav:hover {
-    font-weight: bold;
-  }
-  
-  .ajuste-logo {
-    width: 40%;
-    min-width: 100px !important;
-  }
-  
-  .contenedor-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .botonLogin{
-	  border: none;
-    color: white !important;
-    font-size: 20px;
-    background:  black;
-    padding: 5px 5px;
-    border-radius: 5px;
-}
-
-.botonLogin:hover{
-    background: cadetblue;
-}
-
-.ajuste-logo:hover{
+.ajuste-logo{
+  width: 150px;
   cursor: pointer;
 }
 
-.contenedor-hamburger{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.centrar-nav{
+display: flex;
+justify-content: center;
 }
 
-.img-hamburger{
-  display: flex;
-  align-items: center;
+#navbarNav .navbar-nav a{
+  padding: 1.2rem 2rem;
 }
 
-.col-xs-6, .col-xs-6{
-  width: 50%;
+.navbar-collapse{
+  background-color: #f8f9fa !important;
 }
 
 @media (max-width: 991.98px) {
   .nav-vertical {
       border: 1px solid #ccc;
-      border-radius: 5px;
       display: none;
-      visibility: hidden;
+       visibility: hidden;
       position: absolute;
       width: 300px;
-      top: 67px;
-      background-color: white;
-      z-index: 1;
-      padding-bottom: 18px;
-      padding-top: 10px;
+      top: 57px;
   }
 
   .active {
@@ -78,6 +36,20 @@
 .navbar-collapse{
   background-color: white;
   z-index: 1;
+}
+
+
+/*Boton del login */
+.botonLogin{
+  border: none;
+  color: white !important;
+  width: 80%;
+  background:  black;
+  border-radius: 5px;
+}
+
+.botonLogin:hover{
+  background: cadetblue;
 }
 
 /*Boto para ir arriba*/
