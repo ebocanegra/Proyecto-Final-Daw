@@ -23,7 +23,8 @@ export class RegistroActividadComponent implements OnInit {
   modificar: boolean=false;
   actividades: Actividad[];
   auxiliar: any;
-  constructor(private _builder: FormBuilder, private actividadesServices: ActividadesService, private activatedRoute: ActivatedRoute) { 
+  constructor(private _builder: FormBuilder, private actividadesServices: ActividadesService, private activatedRoute: ActivatedRoute) {
+     
     this.codigo= this.activatedRoute.snapshot.params['codigo'];
 
     if (this.codigo){

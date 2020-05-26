@@ -32,10 +32,10 @@ export class AuthClienteService {
       .pipe(map(data => data));
   }
 
-  loginCliente(correo: string, contrasena: string): Observable<any> {
+  /*loginCliente(correo: string, contrasena: string): Observable<any> {
     const url_api = "http://pi.diiesmurgi.org/~eduardo/public/api/login?include=cliente";
 
-    /*Tengo que arreglar esta ruta antes de seguir ya que no esta creada en laravel */
+    //Tengo que arreglar esta ruta antes de seguir ya que no esta creada en laravel 
 
     return this.htttp
       .post<Cliente>(
@@ -44,7 +44,7 @@ export class AuthClienteService {
         { headers: this.headers }
       )
       .pipe(map(data => data));
-  }
+  }*/
 
   setCliente(user: Cliente): void {
     let user_string = JSON.stringify(user);
@@ -69,16 +69,16 @@ export class AuthClienteService {
     }
   }
 
-  logoutUser() {
+  /*logoutUser() {
     let accessToken = localStorage.getItem("accessToken");
     const url_api = `http://pi.diiesmurgi.org/~eduardo/public/api/logout?access_token=${accessToken}`;
 
-    /*Tengo que arreglar esta ruta antes de seguir ya que no esta creada en laravel */
+    //Tengo que arreglar esta ruta antes de seguir ya que no esta creada en laravel 
 
     localStorage.removeItem("accessToken");
     localStorage.removeItem("currentUser");
     return this.htttp.post<Cliente>(url_api, { headers: this.headers });
-  }
+  }*/
 
 
 }

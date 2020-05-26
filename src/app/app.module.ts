@@ -8,8 +8,8 @@ import { ActividadesComponent } from './actividades/actividades.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-
-
+//Import de las rutas del sevidor
+import {HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -42,6 +42,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { InicioMonitorComponent } from './inicio-monitor/inicio-monitor.component';
 import { NavMonitorComponent } from './nav-monitor/nav-monitor.component';
 import { ActividadesMonitorComponent } from './actividades-monitor/actividades-monitor.component';
+import { from } from 'rxjs';
 
 const appRoutes:Routes = [
   
@@ -204,7 +205,7 @@ const appRoutes:Routes = [
     NgxSpinnerModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
