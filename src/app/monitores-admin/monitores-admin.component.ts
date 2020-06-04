@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Monitor } from '../interfaces/monitores';
 import { MonitoresService } from '../services/monitores.service';
 
+
 @Component({
   selector: 'app-monitores-admin',
   templateUrl: './monitores-admin.component.html',
@@ -15,12 +16,15 @@ export class MonitoresAdminComponent implements OnInit {
   recibidoMonitor: any;
   filasTotalesMonitores:any;
 
-  filterMonitor = '';
+  
 
+  filterMonitor = '';
   pageActual: number = 1;
 
-  constructor(private monitoresService:MonitoresService, private httpClient: HttpClient ) {
+  constructor(private monitoresService:MonitoresService, private httpClient: HttpClient) {
+
     this.getMonitores();
+    
    }
 
   ngOnInit(): void {

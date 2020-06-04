@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cliente } from '../interfaces/clientes';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +14,10 @@ export class ClientesService {
 
   get(){
     return this.httpClient.get(this.API_ENDPOINT+"clientes");
+  }
+
+  getAll() {
+    return this.httpClient.get<Cliente[]>(this.API_ENDPOINT+"clientes");
   }
 
   save(clientes: Cliente ) {

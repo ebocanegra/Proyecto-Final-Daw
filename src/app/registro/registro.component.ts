@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Monitor } from '../interfaces/monitores';
+import { Monitor, RootObject } from '../interfaces/monitores';
 import { MonitoresService } from '../services/monitores.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,6 +15,10 @@ export class RegistroComponent implements OnInit {
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   private dniPattern: any = /^[XYZ]?([0-9]{7,8})([A-Za-z])$/;
 
+  modificar: boolean=false;
+  codigo: any;
+  monitores: Monitor[];
+
   monitor: Monitor = {
     nombre: null,
     nif: null,
@@ -22,11 +26,31 @@ export class RegistroComponent implements OnInit {
     correo: null,
     telefono: null,
     contrasena: null
-  };
+  }
 
   signupForm: FormGroup;
 
   constructor( private _builder: FormBuilder, private monitoresServices: MonitoresService, private activatedRoute: ActivatedRoute ) {
+
+    this.codigo= this.activatedRoute.snapshot.params['codigo'];
+
+    if (this.codigo){
+      
+      this.modificar = true;
+
+      this.monitoresServices.get().subscribe((response)=>{
+        console.log(response);
+        this.monitores=(response as RootObject).data
+
+        this.monitor = this.monitores.find(
+          (elemento) => elemento.codigo==this.codigo
+        );
+
+      });
+  
+    }else{
+      this.modificar=false;
+    }
 
     this.signupForm = this._builder.group({
       nombre: ['', Validators.compose( [Validators.required, Validators.minLength(5) ] ) ],
@@ -47,13 +71,28 @@ export class RegistroComponent implements OnInit {
 
   saveMonitor(){
   
-    this.monitoresServices.save(this.monitor).subscribe((data)=>{
-      alert('Monitor guardado con exito');
-      console.log(data);
-    }, (error)=>{
-      console.log(error);
-      alert('Ocurrio un error.')
-    })
+    if(this.modificar){
+      
+      this.monitoresServices.put(this.monitor).subscribe((data)=>{
+
+        alert('Monito modificado con exito');
+        console.log(data);
+      }, (error)=>{
+        console.log(error);
+        alert('Ocurrio un error al modificar.')
+      })
+
+    }else{
+
+      this.monitoresServices.save(this.monitor).subscribe((data)=>{
+        alert('Monitor guardado con exito');
+        console.log(data);
+      }, (error)=>{
+        console.log(error);
+        alert('Ocurrio un error.')
+      });
+
+    }
 
   }
 

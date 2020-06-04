@@ -19,6 +19,11 @@ export class MonitoresService {
     return this.httpClient.post(this.API_ENDPOINT+'monitores', monitores, {headers: headers});
   }
 
+  put(monitor){
+    const headers = new HttpHeaders({'Content-Type':'application/json'});
+    return this.httpClient.put(this.API_ENDPOINT+'monitores/' + monitor.codigo, monitor, {headers: headers});
+  }
+
   delete(codigo){
     return this.httpClient.delete(this.API_ENDPOINT+"monitores/" + codigo);
   }

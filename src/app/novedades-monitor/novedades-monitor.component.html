@@ -1,0 +1,109 @@
+<section class="container-fluid">
+    
+    <div class="row">
+
+        <div class="col-md-6">
+                
+            <div class="contenedor-total">
+        
+                <div class="separacion"></div>
+            
+                <form class="formulario" [formGroup]="signupNovedades" (ngSubmit)="onSubmit()">
+            
+                    <h1>Novedad</h1>
+                    <div class="contenedor">
+                        <div class="input-contenedor">
+                            <label> <input type="text" [(ngModel)]="novedad.titulo" name="titulo" id="titulo" formControlName="titulo" placeholder="Titulo"> </label>
+                        </div>
+            
+                        <div class="container-validaciones" *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+                            <h6 class="error-validaciones" *ngIf="titulo.errors.required">El titulo es obligatorio.</h6>
+                        </div>
+
+
+                        <div class="input-contenedor">
+                            <label> <input type="text" [(ngModel)]="novedad.fecha" name="fecha" id="fecha" formControlName="fecha" placeholder="Fecha"> </label>
+                        </div>
+            
+                        <div class="container-validaciones" *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
+                            <h6 class="error-validaciones" *ngIf="fecha.errors.required">La fecha es obligatorio.</h6>
+                            <h6 class="error-validaciones" *ngIf="(fecha.dirty || fecha.touched) && fecha.invalid && fecha.errors.pattern">El formato ha de ser dd/mm/aaaa.</h6>
+
+                        </div>
+            
+                        <div class="input-contenedor">
+                            <label> <input type="text" [(ngModel)]="novedad.codigo_monitor" name="codigo_monitor" id="codigo_monitor" formControlName="codigo_monitor" placeholder="Codigo del monitor"></label>
+                        </div>
+            
+                        <div class="container-validaciones" *ngIf="codigo_monitor.invalid && (codigo_monitor.dirty || codigo_monitor.touched)">
+                            <h6 class="error-validaciones" *ngIf="codigo_monitor.errors.required">Codigo del monitor obligatorio.</h6>
+                        </div>
+
+                        <div class="input-contenedor">
+                        
+                            <editor [init]="tinyMceInit" [(ngModel)]="novedad.contenido" id="contenido" formControlName="contenido" placeholder="Contenido.."
+                                class="form-control">
+                            </editor>
+            
+                        </div>
+            
+                        <div class="container-validaciones" *ngIf="contenido.invalid && (contenido.dirty || contenido.touched)">
+                            <h6 class="error-validaciones" *ngIf="contenido.errors.required">Contenido obligatorio.</h6>
+                        </div>
+            
+                        <input type="submit" [disabled]="signupNovedades.invalid" value="Publicar" class="button">
+                        
+                    </div>
+                </form>
+            </div> 
+        </div>
+            
+        
+
+        <div class="col-md-6">
+    
+            <div class="contenedor-inf">
+                <div>
+                    <h5 class="estilo-titulo">Número de novedades:  {{novedadesTotales}} NOVEDADES</h5>
+                </div>
+        
+                <div class="container buscar form-group" *ngIf="pageActual==1">
+                    <div class="input-group">
+                        <div class="input-group-text bg-white">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <input title="Buscar solo en la primera página!" type="text" class="form-control" name="filterNovedad" placeholder="Buscar por titulo.." [(ngModel)]="filterNovedad">
+                    </div>
+                </div>
+
+                <div class="table-responsive text-center">
+                    <table class="table">
+                        
+                        <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Código monitor</th>
+                                <th>Fecha</th>
+                                <th>Contenido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let novedad of novedades | filter: 'titulo':filterNovedad | paginate: {itemsPerPage: 5, currentPage: pageActual}">
+                                <td>{{novedad.titulo}}</td>
+                                <td>{{novedad.codigo_monitor}}</td>
+                                <td>{{novedad.fecha}}</td>
+                                <td>{{novedad.contenido}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+            </div>
+            
+        </div>
+
+    </div>
+
+    
+</section>

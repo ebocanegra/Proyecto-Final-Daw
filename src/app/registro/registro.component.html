@@ -69,7 +69,13 @@
                 <h6 class="error-validaciones" *ngIf="contrasena.errors.minlength">La contraseña tiene que tener minimo 5 caracteres.</h6>
             </div>
 
-            <input (click)="saveMonitor()" [disabled]="signupForm.invalid" value="Registrate" class="button">
+            <span *ngIf="!modificar">
+                <input (click)="saveMonitor()" [disabled]="signupForm.invalid" value="Registrar" class="button">
+            </span>
+
+            <span *ngIf="modificar">
+                <input (click)="saveMonitor()" [disabled]="signupForm.invalid" value="Modificar" class="button">
+            </span>
             
             <div class="pt-3 text-center">
                 <a class="link" routerLink="/monitoresAdmin" routerLinkActive="active"> Ir a monitores del administrador</a>

@@ -15,6 +15,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
+import { EditorModule } from '@tinymce/tinymce-angular';
+
+
 import {NgxSpinnerModule} from 'ngx-spinner'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -44,11 +47,16 @@ import { NavMonitorComponent } from './nav-monitor/nav-monitor.component';
 import { ActividadesMonitorComponent } from './actividades-monitor/actividades-monitor.component';
 import { from } from 'rxjs';
 
+//Seguridad de rutas
+import { AuthGuard } from './guards/auth.guard';
+import { NovedadesClienteComponent } from './novedades-cliente/novedades-cliente.component';
+import { NovedadesMonitorComponent } from './novedades-monitor/novedades-monitor.component';
+
 const appRoutes:Routes = [
   
   
   {
-    path:'', component: NavComponent,
+    path:'', component: NavComponent, 
     children: [
       {
         path:'',
@@ -66,11 +74,14 @@ const appRoutes:Routes = [
   },
 
   {
-    path:'', component: NavClienteComponent,
+    path:'', component: NavClienteComponent, 
+    //seguridad de rutas
+    //canActivate: [AuthGuard],
     children: [
       {
         path:'inicioCliente',
-        component: InicioClienteComponent
+        component: InicioClienteComponent,
+        
       },
       {
         path:'rutinasCliente', component: RutinasClienteComponent
@@ -90,6 +101,10 @@ const appRoutes:Routes = [
       {
         path:'calculadoraCliente',
         component: CalculadoraClienteComponent
+      },
+      {
+        path:'novedadesCliente',
+        component: NovedadesClienteComponent
       },
       
     ]
@@ -129,6 +144,10 @@ const appRoutes:Routes = [
       {
         path:'actividadesMonitor',
         component: ActividadesMonitorComponent
+      },
+      {
+        path:'novedadesMonitor',
+        component: NovedadesMonitorComponent
       },      
     ]
   },
@@ -158,6 +177,10 @@ const appRoutes:Routes = [
   {
     path:'crearActividad/:codigo',
     component: RegistroActividadComponent
+  },
+  {
+    path:'registroMonitor/:codigo',
+    component: RegistroComponent
   },
   {
     path:'**', pathMatch: 'full', redirectTo: '/'
@@ -193,6 +216,8 @@ const appRoutes:Routes = [
     InicioMonitorComponent,
     NavMonitorComponent,
     ActividadesMonitorComponent,
+    NovedadesClienteComponent,
+    NovedadesMonitorComponent,
   ],
   imports: [
     BrowserModule,
@@ -203,7 +228,8 @@ const appRoutes:Routes = [
     HttpClientModule,
     NgxPaginationModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    EditorModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

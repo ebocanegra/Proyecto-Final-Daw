@@ -34,6 +34,7 @@
                                     <th scope="col">Dirección</th>
                                     <th scope="col">Correo</th>
                                     <th scope="col">Teléfono</th>
+                                    
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -44,6 +45,7 @@
                                     <td>{{monitor.direccion}}</td>
                                     <td>{{monitor.correo}}</td>
                                     <td>{{monitor.telefono}}</td>
+                                    <td><a class="button" routerLink="/registroMonitor/{{monitor.codigo}}" routerLinkActive="active">Modificar</a></td>
                                     <td><a class="button" (click)="delete(monitor.codigo)">Eliminar</a></td>
                                 </tr>
                                 </tbody>

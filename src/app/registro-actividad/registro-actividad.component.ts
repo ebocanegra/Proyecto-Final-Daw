@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Actividad } from '../interfaces/actividad';
+import { Actividad, RootObject } from '../interfaces/actividad';
 import { ActividadesService } from '../services/actividades.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -23,26 +23,26 @@ export class RegistroActividadComponent implements OnInit {
   modificar: boolean=false;
   actividades: Actividad[];
   auxiliar: any;
+
+
   constructor(private _builder: FormBuilder, private actividadesServices: ActividadesService, private activatedRoute: ActivatedRoute) {
      
     this.codigo= this.activatedRoute.snapshot.params['codigo'];
 
     if (this.codigo){
+      
       this.modificar = true;
-      this.actividadesServices.get().subscribe((data: Actividad[])=>{
-        this.actividades = data;
-        /*
-         Aqui me da un error en la consola de que no metemos los datos bien
-         */
-        console.log(this.codigo);
 
-        for(this.auxiliar in this.actividades){
-          if(this.auxiliar.codigo==this.codigo){
-            this.actividad=this.actividades[this.codigo];
-          }
-        }
-        console.log(this.actividad);
-      }, (error)=>{ console.log(error) });
+      this.actividadesServices.get().subscribe((response)=>{
+        console.log(response);
+        this.actividades=(response as RootObject).data
+
+        this.actividad = this.actividades.find(
+          (elemento) => elemento.codigo==this.codigo
+        );
+
+      });
+  
     }else{
       this.modificar=false;
     }
@@ -68,7 +68,7 @@ export class RegistroActividadComponent implements OnInit {
       
       this.actividadesServices.put(this.actividad).subscribe((data)=>{
 
-        alert('Actividadad modificada con exito');
+        alert('Actividad modificada con exito');
         console.log(data);
       }, (error)=>{
         console.log(error);
@@ -78,7 +78,7 @@ export class RegistroActividadComponent implements OnInit {
     }else{
 
       this.actividadesServices.save(this.actividad).subscribe((data)=>{
-        alert('Actividadad guardada con exito');
+        alert('Actividad guardada con exito');
         console.log(data);
       }, (error)=>{
         console.log(error);
@@ -86,6 +86,7 @@ export class RegistroActividadComponent implements OnInit {
       })
 
     }
+
   }//Fin del metodo saveActividad.
 
   get nombre() { return this.signupCrearActividad.get('nombre'); }
